@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chenghuiy87-cmd.github.io/spoiler-free-reading-recovery/sitemap.xml

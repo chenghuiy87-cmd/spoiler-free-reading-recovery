@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spoiler-Free Reading Recovery for Physical Books</title>
+  <meta name="description" content="A practical restart card and no-quotes book-club worksheet for physical-book readers who want to remember why a page mattered without copying the passage.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://chenghuiy87-cmd.github.io/spoiler-free-reading-recovery/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Spoiler-Free Reading Recovery for Physical Books">
+  <meta property="og:description" content="Restart an interrupted book in 60 seconds, then turn page reactions into a focused discussion without copying passages.">
+  <meta property="og:url" content="https://chenghuiy87-cmd.github.io/spoiler-free-reading-recovery/">
+  <meta name="twitter:card" content="summary">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f0e4;
+      --ink: #1f2a23;
+      --muted: #5c685f;
+      --leaf: #286248;
+      --leaf-dark: #173c2c;
+      --line: #d9cdbb;
+      --card: #fffdf8;
+      --accent: #d97745;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+      line-height: 1.62;
+    }
+
+    a { color: var(--leaf); }
+    a:hover { color: var(--leaf-dark); }
+
+    header,
+    main,
+    footer {
+      width: min(760px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    header {
+      padding: 72px 0 36px;
+    }
+
+    .eyebrow {
+      color: var(--leaf);
+      font: 700 0.8rem/1.2 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2 {
+      line-height: 1.08;
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 700px;
+      margin: 12px 0 18px;
+      font-size: clamp(2.6rem, 8vw, 5.3rem);
+      letter-spacing: -0.045em;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      letter-spacing: -0.025em;
+    }
+
+    .lede {
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 1.2rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      border: 1px solid var(--leaf-dark);
+      border-radius: 999px;
+      padding: 11px 18px;
+      background: var(--leaf-dark);
+      color: #fff;
+      font: 700 0.94rem/1.2 ui-sans-serif, system-ui, sans-serif;
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--leaf-dark);
+    }
+
+    section {
+      margin: 28px 0;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: clamp(24px, 6vw, 44px);
+      background: var(--card);
+      box-shadow: 0 18px 48px rgb(48 43 34 / 7%);
+    }
+
+    .restart-card {
+      display: grid;
+      gap: 16px;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+    }
+
+    .restart-card li {
+      position: relative;
+      padding-left: 48px;
+      counter-increment: step;
+    }
+
+    .restart-card li::before {
+      position: absolute;
+      left: 0;
+      top: -2px;
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--leaf);
+      color: #fff;
+      content: counter(step);
+      font: 700 0.9rem/1 ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .template {
+      border-left: 4px solid var(--accent);
+      padding: 14px 18px;
+      background: #fff8ef;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.95rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.96rem;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .disclosure {
+      border-color: #b8cdbf;
+      background: #eef6f0;
+    }
+
+    footer {
+      padding: 22px 0 56px;
+      color: var(--muted);
+      font: 0.85rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    }
+
+    @media (max-width: 560px) {
+      header { padding-top: 48px; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">A field guide for physical-book readers</div>
+    <h1>Return to the page without restarting the book.</h1>
+    <p class="lede">A 60-second restart card and a no-quotes discussion worksheet. Both preserve your reaction—not the author’s passage—so they stay useful without creating spoilers.</p>
+    <div class="actions">
+      <a class="button" href="#restart">Use the restart card</a>
+      <a class="button secondary" href="#club">Plan a book-club discussion</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="restart">
+      <div class="eyebrow">Tool 01 · interrupted reading</div>
+      <h2>The 60-second restart card</h2>
+      <p>Use this when you have been away from a physical book long enough to remember the page but not the thought that made you stop.</p>
+      <ol class="restart-card">
+        <li><strong>Find the last page you remember.</strong> Do not reread a whole chapter yet.</li>
+        <li><strong>Name the reason.</strong> Choose Keep, Felt, Clue, or Discuss.</li>
+        <li><strong>Rate the pull.</strong> Use 1 for faint, 2 for clear, or 3 for strong.</li>
+        <li><strong>Write one return cue in your own words.</strong> Keep it short enough to scan before reading.</li>
+        <li><strong>Read two pages forward.</strong> Then decide whether context has returned.</li>
+      </ol>
+      <p class="template">Page ___ · Keep / Felt / Clue / Discuss · 1 / 2 / 3<br>Return cue: ______________________________</p>
+      <p class="note">Boundary: record your reaction, question, or inference. Do not copy the passage and do not summarize events beyond that page.</p>
+    </section>
+
+    <section id="club">
+      <div class="eyebrow">Tool 02 · book-club preparation</div>
+      <h2>The no-quotes discussion worksheet</h2>
+      <p>Choose no more than five moments. A page number plus your reaction is usually enough to recover a useful discussion without highlighting half the book.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th>Reason</th>
+            <th>Strength</th>
+            <th>Question in your words</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>___</td><td>Keep / Felt / Clue / Discuss</td><td>1–3</td><td>__________________</td></tr>
+          <tr><td>___</td><td>Keep / Felt / Clue / Discuss</td><td>1–3</td><td>__________________</td></tr>
+          <tr><td>___</td><td>Keep / Felt / Clue / Discuss</td><td>1–3</td><td>__________________</td></tr>
+          <tr><td>___</td><td>Keep / Felt / Clue / Discuss</td><td>1–3</td><td>__________________</td></tr>
+          <tr><td>___</td><td>Keep / Felt / Clue / Discuss</td><td>1–3</td><td>__________________</td></tr>
+        </tbody>
+      </table>
+      <h3>Turn each reaction into a question</h3>
+      <ul>
+        <li><strong>Keep:</strong> What idea here could travel beyond this book?</li>
+        <li><strong>Felt:</strong> What changed the emotional temperature?</li>
+        <li><strong>Clue:</strong> What did you suspect when you reached this page?</li>
+        <li><strong>Discuss:</strong> Which choice, claim, or tension deserves another reader’s view?</li>
+      </ul>
+      <p><strong>Three-page agenda:</strong> start with the strongest reaction, follow with a different reaction type, and finish with a page where the group disagrees.</p>
+      <p class="note">Spoiler-light rule: announce the page and question first. If someone has not reached it, skip the question without explaining what happens there.</p>
+    </section>
+
+    <section class="disclosure">
+      <div class="eyebrow">Optional iPhone workflow</div>
+      <h2>Keep the map beside the physical book.</h2>
+      <p>I am the developer of <strong>Reading Journal: TabMap</strong>, an iPhone app built around the same page + reason + intensity loop. The free version includes one complete book map and a spoiler-free share preview. No account is required; books, page marks, labels, and private notes stay on device.</p>
+      <p><a class="button" href="https://apps.apple.com/us/app/reading-journal-tabmap/id6796663483">View Reading Journal: TabMap on the App Store</a></p>
+      <p class="note">The worksheet and restart card above work on paper and do not require the app.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created as an original public resource by the developer of Reading Journal: TabMap. Activity marker: <code>day12-strong-distribution</code>.</p>
+  </footer>
+</body>
+</html>
